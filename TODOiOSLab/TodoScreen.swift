@@ -55,12 +55,13 @@ struct TodoScreen: View {
         let title = newTodoText.trimmingCharacters(in: .whitespacesAndNewlines)
         guard !title.isEmpty else { return }
         // LAB 2: agrega una tarea y limpia el campo (dos líneas).
+        todos.append(Todo(title: title))
+        newTodoText = ""
     }
 
     private func toggleTodo(id: UUID) {
         guard let index = todos.firstIndex(where: { $0.id == id }) else { return }
         // LAB 3: invierte isDone en la tarea ubicada en index (una línea).
-        _ = index // Elimina esta línea cuando completes el ejercicio.
     }
 }
 
